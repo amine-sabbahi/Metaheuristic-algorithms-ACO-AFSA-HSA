@@ -1,5 +1,4 @@
 import numpy as np
-
 from ant_colony import AntColony
 
 distances = np.array([[np.inf, 2, 2, 5, 7],
@@ -10,5 +9,5 @@ distances = np.array([[np.inf, 2, 2, 5, 7],
 
 ant_colony = AntColony(distances, 4, 2, 100, 0.95, alpha=1, beta=1)
 shortest_path = ant_colony.run()
-print (f"shorted_path: {shortest_path}")
-
+print(f"shortest_path: {shortest_path}")
+ant_colony.plot(shortest_path[0])

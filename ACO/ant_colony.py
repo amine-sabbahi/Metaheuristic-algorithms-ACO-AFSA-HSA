@@ -1,6 +1,7 @@
 import random as rn
 import numpy as np
 from numpy.random import choice as np_choice
+import matplotlib.pyplot as plt
 
 class AntColony(object):
 
@@ -35,7 +36,7 @@ class AntColony(object):
             all_paths = self.gen_all_paths()
             self.spread_pheronome(all_paths, self.n_best, shortest_path=shortest_path)
             shortest_path = min(all_paths, key=lambda x: x[1])
-            print (shortest_path)
+            print(shortest_path)
             if shortest_path[1] < all_time_shortest_path[1]:
                 all_time_shortest_path = shortest_path            
             self.pheromone = self.pheromone * self.decay            
@@ -83,4 +84,14 @@ class AntColony(object):
         move = np_choice(self.all_inds, 1, p=norm_row)[0]
         return move
 
-
+    def plot(self, path):
+        nodes = range(len(self.distances))
+        coords = {i: (rn.uniform(0, 10), rn.uniform(0, 10)) for i in nodes}
+        fig, ax = plt.subplots()
+        for key, value in coords.items():
+            ax.scatter(*value)
+            ax.annotate(key, value)
+        for move in path:
+            start, end = move
+            ax.plot([coords[start][0], coords[end][0]], [coords[start][1], coords[end][1]], 'b')
+        plt.show()

@@ -45,7 +45,7 @@ To run this project, you need to have Python and NumPy installed. You can instal
  1 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/ant_colony_optimization.git
+git clone https://github.com/amine-sabbahi/Metaheuristic-algorithms-ACO-AFSA-BHA.git
 cd ant_colony_optimization/ACO
 ```
  2 Run the test script:
@@ -53,6 +53,8 @@ cd ant_colony_optimization/ACO
 ```bash
 python test_acp.py
 ```
+## Result
+![figure](ACO/Figures/Figure_1.png)
 
 ## Contact
 
