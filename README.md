@@ -12,12 +12,13 @@ METAHEURISTICS AND STOCHASTIC SEARCH ALGORITHMS - ACO - AFSA - BHA
 
 This project implements an Ant Colony Optimization (ACO) algorithm to solve the Traveling Salesman Problem (TSP). The algorithm is inspired by the foraging behavior of ants and uses pheromone trails to find the shortest path between a set of cities.
 
-## Project Structure
+### Project Structure
 
 - `ACO/ant_colony.py`: Contains the implementation of the Ant Colony Optimization algorithm.
 - `ACO/test_acp.py`: Contains a test script to run the ACO algorithm on a sample distance matrix.
 
-**Algorithm Steps**
+### **Algorithm Steps**
+
 
 
 
@@ -37,9 +38,9 @@ This project implements an Ant Colony Optimization (ACO) algorithm to solve the 
 
 To run this project, you need to have Python and NumPy installed. You can install NumPy using pip:
 
-    ```bash
-    pip install numpy
-    ```
+```bash
+pip install numpy
+```
 
 ## Usage
  1 Clone the repository:
@@ -53,7 +54,7 @@ cd ant_colony_optimization/ACO
 ```bash
 python test_acp.py
 ```
-## Result
+## ACO Result
 ![figure](ACO/Figures/Figure_1.png)
 
 ## Contact
