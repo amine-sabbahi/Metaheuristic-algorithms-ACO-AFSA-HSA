@@ -3,12 +3,12 @@ METAHEURISTICS AND STOCHASTIC SEARCH ALGORITHMS - ACO - AFSA - BHA
 
 ## **Algorithms**
 
-- [x] Ant colony optimization - ACO
-- [ ] Artificial Fish Swarm Algorithm - AFSA
+- [x] [Ant colony optimization - ACO](#1 - Ant colony optimization - ACO)
+- [x] Artificial Fish Swarm Algorithm - AFSA
 - [ ] Black Holes Algorithm - BHA
 
-## **Algorithm Details**
-### **Ant colony optimization - ACO**
+# **Algorithm Details**
+## **1 - Ant colony optimization - ACO**
 
 This project implements an Ant Colony Optimization (ACO) algorithm to solve the Traveling Salesman Problem (TSP). The algorithm is inspired by the foraging behavior of ants and uses pheromone trails to find the shortest path between a set of cities.
 
@@ -18,9 +18,6 @@ This project implements an Ant Colony Optimization (ACO) algorithm to solve the 
 - `ACO/test_acp.py`: Contains a test script to run the ACO algorithm on a sample distance matrix.
 
 ### **Algorithm Steps**
-
-
-
 
 **Parameters**
 
@@ -34,7 +31,7 @@ This project implements an Ant Colony Optimization (ACO) algorithm to solve the 
 - `alpha (int or float)`: exponenet on pheromone, higher alpha gives pheromone more weight. Default=1
 - `beta (int or float)`: exponent on distance, higher beta give distance more weight. Default=1
 
-## Installation
+### Installation
 
 To run this project, you need to have Python and NumPy installed. You can install NumPy using pip:
 
@@ -42,7 +39,7 @@ To run this project, you need to have Python and NumPy installed. You can instal
 pip install numpy
 ```
 
-## Usage
+### Usage
  1 Clone the repository:
 
 ```bash
@@ -54,8 +51,11 @@ cd ant_colony_optimization/ACO
 ```bash
 python test_acp.py
 ```
-## ACO Result
+### ACO Result
 ![figure](ACO/Figures/Figure_1.png)
+
+
+
 
 ## Contact
 
