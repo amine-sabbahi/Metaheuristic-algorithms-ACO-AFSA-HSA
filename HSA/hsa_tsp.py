@@ -102,7 +102,7 @@ def run_benchmarks(problem, best_route, benchmark_func, benchmark_name):
 
 
 # Example usage
-problem = tsplib95.load('xqf131.tsp')
+problem = tsplib95.load('dataset.tsp')
 hs = HarmonySearch(problem)
 best_route, best_distance = hs.solve()
 
