@@ -32,7 +32,7 @@ def run_benchmarks(shortest_path, benchmark_func, benchmark_name):
     print(f"{benchmark_name} Benchmark Performance: {performance}")
 
 # Example usage
-file_path = 'ACO/xqf131.tsp'
+file_path = 'xqf131.tsp'
 distances = load_tsplib_data(file_path)
 
 # Initialize Ant Colony Optimization with TSPLIB distances
