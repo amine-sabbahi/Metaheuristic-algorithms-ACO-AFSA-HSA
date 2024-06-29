@@ -1,5 +1,5 @@
 import numpy as np
-from ant_colony import AntColony
+from aco import AntColony
 
 distances = np.array([[np.inf, 2, 2, 5, 7],
                       [2, np.inf, 4, 8, 2],
