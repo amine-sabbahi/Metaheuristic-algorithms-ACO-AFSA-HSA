@@ -52,7 +52,7 @@ cd ant_colony_optimization/ACO
 python test_acp.py
 ```
 ### ACO Result
-![figure](ACO/Figures/Figure_1.png)
+![figure](_ACO/Figures/Figure_1.png)
 
 
 
