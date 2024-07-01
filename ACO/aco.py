@@ -5,6 +5,9 @@ import random as rn
 
 class AntColony:
     def __init__(self, distances, n_ants, n_best, n_iterations, decay, alpha=1, beta=1):
+        """
+        Initialisation de l'algorithme de colonie de fourmis.
+        """
         self.distances = distances  # Matrice des distances entre les nœuds
         self.pheromone = np.ones(self.distances.shape) / len(distances)  # Matrice des phéromones initialisée
         self.all_inds = range(len(distances))  # Indices de tous les nœuds
@@ -16,6 +19,9 @@ class AntColony:
         self.beta = beta  # Importance des distances
 
     def run(self):
+        """
+        Exécution de l'algorithme de colonie de fourmis.
+        """
         shortest_path = None  # Chemin le plus court de l'itération courante
         all_time_shortest_path = ("placeholder", np.inf)  # Meilleur chemin trouvé jusqu'à présent
         plt.ion()  # Mode interactif pour la visualisation
@@ -37,18 +43,27 @@ class AntColony:
         return all_time_shortest_path  # Retour du meilleur chemin trouvé
 
     def spread_pheronome(self, all_paths, n_best, shortest_path):
+        """
+        Mise à jour des phéromones basée sur les meilleurs chemins.
+        """
         sorted_paths = sorted(all_paths, key=lambda x: x[1])  # Tri des chemins par distance
         for path, dist in sorted_paths[:n_best]:  # Considération des n meilleurs chemins
             for move in path:
                 self.pheromone[move] += 1.0 / self.distances[move]  # Mise à jour des phéromones
 
     def gen_path_dist(self, path):
+        """
+        Calcul de la distance totale d'un chemin.
+        """
         total_dist = 0  # Initialisation de la distance totale
         for ele in path:
             total_dist += self.distances[ele]  # Calcul de la distance totale pour un chemin donné
         return total_dist  # Retour de la distance totale
 
     def gen_all_paths(self):
+        """
+        Génération de tous les chemins pour les fourmis.
+        """
         all_paths = []  # Initialisation de la liste de tous les chemins
         for i in range(self.n_ants):
             path = self.gen_path(0)  # Génération d'un chemin à partir du nœud de départ 0
@@ -56,6 +71,9 @@ class AntColony:
         return all_paths  # Retour de la liste de tous les chemins
 
     def gen_path(self, start):
+        """
+        Génération d'un chemin pour une fourmi à partir d'un nœud de départ.
+        """
         path = []  # Initialisation du chemin
         visited = set()  # Initialisation de l'ensemble des nœuds visités
         visited.add(start)  # Ajout du nœud de départ aux nœuds visités
@@ -69,16 +87,22 @@ class AntColony:
         return path  # Retour du chemin généré
 
     def pick_move(self, pheromone, dist, visited):
+        """
+        Choix du prochain nœud à visiter par une fourmi.
+        """
         pheromone = np.copy(pheromone)  # Copie des phéromones pour éviter les modifications directes
         pheromone[list(visited)] = 0  # Mise à zéro des phéromones des nœuds déjà visités
 
-        row = pheromone ** self.alpha * (( 1.0 / dist) ** self.beta)  # Calcul de l'influence des phéromones et des distances
+        row = pheromone ** self.alpha * ((1.0 / dist) ** self.beta)  # Calcul de l'influence des phéromones et des distances
 
         norm_row = row / row.sum()  # Normalisation des probabilités de mouvement
         move = np_choice(self.all_inds, 1, p=norm_row)[0]  # Choix du prochain nœud basé sur les probabilités
         return move  # Retour du nœud choisi
 
     def plot(self, path, title, fig, ax):
+        """
+        Visualisation du chemin courant.
+        """
         ax.clear()  # Effacement de l'axe précédent
         nodes = range(len(self.distances))  # Liste des nœuds
         coords = {i: (rn.uniform(0, 10), rn.uniform(0, 10)) for i in nodes}  # Génération de coordonnées aléatoires pour les nœuds

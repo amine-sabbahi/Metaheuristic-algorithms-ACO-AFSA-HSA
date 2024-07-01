@@ -3,7 +3,7 @@ METAHEURISTICS AND STOCHASTIC SEARCH ALGORITHMS - ACO - AFSA - BHA
 
 ## **Algorithms**
 
-- [x] [Ant colony optimization - ACO](#1 - Ant colony optimization - ACO)
+- [x] Ant colony optimization - ACO
 - [x] Artificial Fish Swarm Algorithm - AFSA
 - [x] Harmony Search Algorithm - HSA
 
